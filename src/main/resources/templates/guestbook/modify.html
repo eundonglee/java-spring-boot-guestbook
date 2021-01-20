@@ -64,6 +64,21 @@
 
             });
 
+            $(".listBtn").click(function(){
+
+                var pageInfo = $("input[name='page']");
+
+                actionForm.empty();
+                actionForm.append(pageInfo)
+                actionForm
+                    .attr("action", "/guestbook/list")
+                    .attr("method", "get");
+
+                console.log(actionForm.html());
+                actionForm.submit();
+
+            })
+
             $(".modifyBtn").click(function(){
 
                 if(!confirm("수정하시겠습니까?")){
